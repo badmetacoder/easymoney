@@ -6,15 +6,17 @@ import unittest
 
 emoney = easymoney.EasyMoney()
 
+
 class KnownValues(unittest.TestCase):
-    knownValues = ( ([0], 0.0),
-                    ([1, 2L, 3.0], 2.0),
-                    ([1, 0], 0.5),
-                    ([1, 2], 1.5),
-                    ([0, 0, 0, 1], 0.25) )
+
+    knownValues = (([0], 0.0),
+                   ([1, 2L, 3.0], 2.0),
+                   ([1, 0], 0.5),
+                   ([1, 2], 1.5),
+                   ([0, 0, 0, 1], 0.25))
 
     def testAVERAGE(self):
-        """getMean should give known result with known input"""
+        """AVERAGE should give average of the list of values"""
         for l, m in self.knownValues:
             result = emoney.AVERAGE(l)
             self.assertEqual(m, result)
