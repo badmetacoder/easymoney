@@ -66,6 +66,10 @@ class EasyMoney:
         returned by fDATE().  Do *not* assume that timestamps from two
         different systems will be the same.  Always check timezones,
         epochs, etc.
+
+        ###
+        ### TODO: Verify
+        ###
         """
 
         return calendar.timegm((y, m, d, 0, 0, 0))
@@ -1219,7 +1223,7 @@ def daysInA360DayYear(self, dStart, mStart, yStart, dEnd, mEnd, yEnd):
             raise ZeroDivisionError, 'nLst has zero length'
 
             if trim >= 0.5:
-                raise ArthmeticError, 'trim greater or equal 50%'
+                raise ArithmeticError, 'trim greater or equal 50%'
 
         if trim == 0.0:
             return self.AVERAGE(nLst)
@@ -1227,6 +1231,7 @@ def daysInA360DayYear(self, dStart, mStart, yStart, dEnd, mEnd, yEnd):
         a = int(round(size * (trim / 2.0)))
         nLst = nLst[a:-a]
         return self.AVERAGE(nLst)
+
 
     def fUPPER(self, s):
 
